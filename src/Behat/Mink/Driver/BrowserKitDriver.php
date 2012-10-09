@@ -757,7 +757,7 @@ class BrowserKitDriver implements DriverInterface
 
                 return array_pop($field);
             }
-            
+
             return $this->forms[$formId][$fieldName];
         }
 
@@ -878,4 +878,23 @@ class BrowserKitDriver implements DriverInterface
 
         return $crawler;
     }
+
+
+    /**
+     * Set the dimensions of the window.
+     *
+     * @param integer $width set the window width, measured in pixels
+     * @param integer $height set the window height, measured in pixels
+     * @param string $name window name (null for the main window)
+     */
+    public function resizeWindow($width, $height, $name = null)
+    {
+        throw new UnsupportedDriverActionException('resizeWindow is not supported by %s', $this);
+    }
+
+    public function getScreenshot()
+    {
+        throw new UnsupportedDriverActionException('getScreenshot is not supported by %s', $this);
+    }
+
 }
